@@ -43,4 +43,6 @@ if __name__ == "__main__":
          if not output_file.exists() or args.force:
             output_file.hardlink_to(caption_file)
 
+   print(output_dir)
+
 
