@@ -14,7 +14,7 @@ if __name__ == "__main__":
    parser.add_argument("-o", "--output", default="output", help="output directory")
    parser.add_argument("-e", "--caption_extension", default=".txt", help="caption file extension")
    parser.add_argument("-r", "--resolution", type=int, default=512, help="base resolution of saving images")
-   parser.add_argument("-f", "--force", action="store_bool", help="force overwriting existing files")
+   parser.add_argument("-f", "--force", action="store_true", help="force overwriting existing files")
    args = parser.parse_args()
 
    input_dir = Path(args.input)
