@@ -34,11 +34,13 @@ if __name__ == "__main__":
          image = image.resize((w, h), Image.LANCZOS)
 
       output_file = output_dir / image_file.with_suffix(".avif").name
-      image.save(output_file)
+      if not output_file.exists() or args.force:
+         image.save(output_file)
 
       caption_file = image_file.with_suffix(args.caption_extension)
       if caption_file.exists():
          output_file = output_dir / caption_file.name
-         output_file.hardlink_to(caption_file)
+         if not output_file.exists() or args.force:
+            output_file.hardlink_to(caption_file)
 
 
